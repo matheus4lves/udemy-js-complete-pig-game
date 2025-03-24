@@ -1,1 +1,2 @@
-'use strict';
+"use strict";
+import "../app/styles.css";

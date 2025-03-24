@@ -41,11 +41,23 @@ const loadImages = () => ({
   },
 });
 
+const loadCSS = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+});
+
 const parts = {
   loadHTML,
   generateHTML,
   transpileTypeScript,
   loadImages,
+  loadCSS,
 };
 
 export {
@@ -54,4 +66,5 @@ export {
   generateHTML,
   transpileTypeScript,
   loadImages,
+  loadCSS,
 };
