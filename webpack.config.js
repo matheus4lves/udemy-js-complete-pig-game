@@ -17,8 +17,8 @@ const commonConfiguration = merge([
   },
   parts.loadHTML(),
   parts.generateHTML({ template: "./index.html" }),
-  parts.transpileTypeScript(),
   parts.loadImages(),
+  parts.transpileTS(),
   parts.loadCSS(),
 ]);
 

@@ -15,7 +15,7 @@ const generateHTML = ({ template = "" } = {}) => ({
   plugins: [new HtmlWebpackPlugin({ template })],
 });
 
-const transpileTypeScript = () => ({
+const transpileTS = () => ({
   module: {
     rules: [
       {
@@ -55,8 +55,8 @@ const loadCSS = () => ({
 const parts = {
   loadHTML,
   generateHTML,
-  transpileTypeScript,
   loadImages,
+  transpileTS,
   loadCSS,
 };
 
@@ -64,7 +64,7 @@ export {
   parts as default,
   loadHTML,
   generateHTML,
-  transpileTypeScript,
   loadImages,
+  transpileTS,
   loadCSS,
 };
