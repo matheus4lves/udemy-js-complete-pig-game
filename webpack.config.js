@@ -6,6 +6,10 @@ const __dirname = import.meta.dirname;
 
 console.log("[import.meta.dirname]:", __dirname);
 
+const assets = {
+  patterns: [{ from: "./public/images", to: "images" }],
+};
+
 const commonConfiguration = merge([
   {
     context: path.resolve(__dirname, "app"),
@@ -17,9 +21,10 @@ const commonConfiguration = merge([
   },
   parts.loadHTML(),
   parts.generateHTML({ template: "./index.html" }),
-  parts.loadImages(),
   parts.transpileTS(),
   parts.loadCSS(),
+  parts.loadImages(),
+  parts.copy(assets),
 ]);
 
 const configs = {

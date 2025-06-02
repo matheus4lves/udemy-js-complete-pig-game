@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const loadHTML = () => ({
   module: {
@@ -52,12 +53,17 @@ const loadCSS = () => ({
   },
 });
 
+const copy = ({ patterns, options = {} }) => ({
+  plugins: [new CopyWebpackPlugin({ patterns, options })],
+});
+
 const parts = {
   loadHTML,
   generateHTML,
   loadImages,
   transpileTS,
   loadCSS,
+  copy,
 };
 
 export {
@@ -67,4 +73,5 @@ export {
   loadImages,
   transpileTS,
   loadCSS,
+  copy,
 };
